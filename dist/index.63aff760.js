@@ -579,6 +579,22 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"adjPd":[function(require,module,exports) {
+const userA = {
+    name: "Lee",
+    age: 20,
+    address: {
+        city: "\uC11C\uC6B8",
+        country: "Korea"
+    }
+};
+const userB = {
+    name: "Song",
+    age: 23
+};
+function getInfo(user) {
+    return user.address?.city || "\uC815\uBCF4 \uC5C6\uC74C";
+}
+console.log(getInfo(userB));
 
 },{}]},["1yfyN","adjPd"], "adjPd", "parcelRequire4497")
 
