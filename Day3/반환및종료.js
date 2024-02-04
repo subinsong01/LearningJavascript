@@ -6,4 +6,4 @@ function  plus(num) {
     return num + 1; 
   }
 console.log(plus(0));
-console.log(plus());
+console.log(plus()); // number가 아닌경우
