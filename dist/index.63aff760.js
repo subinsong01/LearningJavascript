@@ -579,6 +579,22 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"adjPd":[function(require,module,exports) {
+//8. getTime() / .setTime() -> `1970-01-01 00:00:00(유닉스)부터 경과한 날짜 인스턴스의 밀리초(ms)로 반환하거나 지정한다.
+const date3 = new Date();
+console.log(date3.getTime());
+console.log(date3);
+date3.setTime(1700000000);
+console.log(date3.getTime());
+console.log(date3);
+//9.isAfter : 두 시간을 비교해서 어떤게 더 나중인지를 반환
+Date.prototype.isAfter = function(date) {
+    const a = this.getTime();
+    const b = date.getTime();
+    return a > b;
+};
+const d1 = new Date("Sat Jan 01 2022 00:00:00 GMT+0900 (\uD55C\uAD6D \uD45C\uC900\uC2DC)");
+const d2 = new Date("Sat Jan 01 2023 00:00:00 GMT+0900 (\uD55C\uAD6D \uD45C\uC900\uC2DC)");
+console.log(d1.isAfter(d2)); //false
 
 },{}]},["1yfyN","adjPd"], "adjPd", "parcelRequire4497")
 
