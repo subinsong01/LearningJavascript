@@ -56,7 +56,7 @@ console.log(arr11.flat(Infinity));
 const arr12 = ['A','B','C'];
 arr12.forEach(item => console.log(item));
 
-/* .includes() : 대상 배열이 특정 요소를 포함하고 있는지 확인 */
+/*9.includes() : 대상 배열이 특정 요소를 포함하고 있는지 확인 */
 const arr113 = [ 1,2, 3];
 console.log(arr113.includes(2)); //true
 

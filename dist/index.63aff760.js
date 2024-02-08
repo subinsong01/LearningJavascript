@@ -579,6 +579,43 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"adjPd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+var _testJson = require("./test.json");
+var _testJsonDefault = parcelHelpers.interopDefault(_testJson);
+console.log((0, _testJsonDefault.default));
+
+},{"./test.json":"3j5KS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3j5KS":[function(require,module,exports) {
+module.exports = JSON.parse('"Hello World!"');
+
+},{}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || Object.prototype.hasOwnProperty.call(dest, key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
 },{}]},["1yfyN","adjPd"], "adjPd", "parcelRequire4497")
 
