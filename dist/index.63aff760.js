@@ -580,12 +580,42 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"adjPd":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _testJson = require("./test.json");
-var _testJsonDefault = parcelHelpers.interopDefault(_testJson);
-console.log((0, _testJsonDefault.default));
+var _module = require("./Day6/module");
+var _moduleDefault = parcelHelpers.interopDefault(_module);
+console.log((0, _moduleDefault.default));
+console.log((0, _module.hello));
+console.log((0, _module.arr));
+setTimeout(()=>{
+    require("778bc71db8f98c62").then((abc)=>{
+        console.log(abc);
+    });
+}, 1000);
+setTimeout(async ()=>{
+    const abc = await require("778bc71db8f98c62");
+    console.log(abc);
+}, 1000);
 
-},{"./test.json":"3j5KS","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3j5KS":[function(require,module,exports) {
-module.exports = JSON.parse('"Hello World!"');
+},{"./Day6/module":"3SMMh","778bc71db8f98c62":"l04wN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3SMMh":[function(require,module,exports) {
+//1.module : 특정 데이터들의 집합(파일) + index.html에서 type=module으로 명시가 되어 있어야 작동한다
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "hello", ()=>hello);
+parcelHelpers.export(exports, "arr", ()=>arr);
+const hello = "Hello World~";
+//2.기본 내보내기 : export default 123; = 이름을 따로 지정하지 않고, main에서 가지고 올 때 정해준다. + 한 번만 가능
+//3.이름 내보내기 : export const hello = 'Hello World~';
+exports.default = 123;
+const arr = [];
+//4.import * as abc from './Day6/module' : *(와일드카드) : 여러 개의 개념을 한 번에 지정한다는 의미 = 전체
+//5. 중간에서 module을 import 해야하는 상황인 경우
+setTimeout(()=>{
+    require("39c38a72d604eb4f").then((abc)=>{
+        console.log(abc);
+    });
+}, 1000);
+
+},{"39c38a72d604eb4f":"l04wN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l04wN":[function(require,module,exports) {
+module.exports = Promise.resolve(module.bundle.root("3SMMh"));
 
 },{}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
