@@ -579,6 +579,28 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"adjPd":[function(require,module,exports) {
+const delayadd = (index)=>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if (index > 10) {
+                reject(`${index}\u{B294} \u{C22B}\u{C790} 10\u{BCF4}\u{B2E4} \u{D074} \u{C218} \u{C5C6}\u{C2B5}\u{B2C8}\u{B2E4} \u{3160}\u{3160}`);
+                return;
+            }
+            console.log(index);
+            resolve(index + 1);
+        }, 1000);
+    });
+};
+delayadd(1).then((res)=>console.log(res)).catch((err)=>console.error(err));
+const wrap = async ()=>{
+    try {
+        const res = await delayadd(2);
+        console.log(res);
+    } catch (err) {
+        console.error(err);
+    }
+};
+wrap();
 
 },{}]},["1yfyN","adjPd"], "adjPd", "parcelRequire4497")
 

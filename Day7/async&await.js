@@ -16,3 +16,14 @@ const a = () => {
   b()
  }
  wrap();
+
+ //반복문에서 사용하는 방법
+ const title = ['겨울왕국', '아바타', '신과 함께'];
+
+ const wrap2 = async() => {
+  for(const title of titles) {
+    const movies = await getMovies(title)
+    console.log(title, movies)
+  }
+ }
+ wrap2();
